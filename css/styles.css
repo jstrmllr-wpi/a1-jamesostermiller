@@ -83,6 +83,9 @@ detail-buttons{
     margin-left:auto;
     margin-right:auto;
     margin-top:20px;
+    @media (scripting:none){
+        display:none;
+    }
 }
 button{
     padding:10px;
