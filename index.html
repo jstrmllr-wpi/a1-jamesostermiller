@@ -5,6 +5,10 @@
   <title>CS4241 Assignment 1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+
   <style>
     :root{
       /* ORIGINAL COLORS (for reference) */
@@ -26,6 +30,8 @@
       margin:0;
       padding:0;
       color:var(--color5);
+      font-family:monospace;
+      font-size:13px;
     }
     body{
       height:100lvh;
@@ -37,7 +43,7 @@
       padding:20px;
       position:relative;
       height:100%;
-      max-width:800px;
+      max-width:750px;
       margin-left:auto;
       margin-right:auto;
       border:4px dotted var(--color5);
@@ -55,13 +61,8 @@
       text-align:center;
       margin-top:0;
       padding:10px;
-    }
-    ul{
-      padding-left:20px;
-      list-style-type:"\2604 ";
-      > li {
-        padding-left:10px;
-      }
+      font-family: "Major Mono Display";
+      font-size: 26px;
     }
     details{
       border-bottom:2px solid var(--color5);
@@ -81,6 +82,32 @@
       margin:-10px;
       font-weight:bold;
       text-align:center;
+      &:hover{
+        background-color:var(--color3);
+      }
+    }
+    button{
+      padding:10px;
+      width:max-content;
+      text-transform:uppercase;
+      margin-left:auto;
+      margin-right:auto;
+      font:inherit;
+      font-weight:bold;
+      font-size:small;
+      background-color:var(--color2);
+      &:hover{
+        background-color:var(--color3);
+        border-color:var(--color2);
+      }
+    }
+    ul{
+      padding-left:20px;
+      list-style-type:"\2604 ";
+      > li {
+        padding-left:10px;
+        margin-bottom:5px;
+      }
     }
     /* @media screen and (min-width:800px){
 
@@ -91,13 +118,13 @@
 <body>
   <main>
     <h1>James Ostermiller</h1>
-    <about>
+    <div>
       <details>
         <summary>Major</summary>
         Computer Science, class of 2028
       </details>
       <details>
-        <summary>Previous CS classes:</summary>
+        <summary>Previous CS classes</summary>
         <ul>
           <li>CS 1102 - Accelerated Intro to Program Design</li>
           <li>CS 2103 - Accelerated Object-Oriented Design Concepts</li>
@@ -118,9 +145,19 @@
           <li>CSS: A lot</li>
           <li>JavaScript: some</li>
         </ul>
-      </summary>
-    </about>
+      </details>
+    </div>
+    <button type="buttton" onclick="closeDetails()">Close all</button>
   </main>
+
+  <script>
+    function closeDetails(){
+      const elems = document.getElementsByTagName('details')
+      for(let i = 0; i < elems.length; i++){
+        elems[i].removeAttribute('open');
+      }
+    }
+  </script>
 </body>
 
 </html>
