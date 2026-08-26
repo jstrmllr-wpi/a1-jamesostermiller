@@ -82,8 +82,8 @@ Note the highest grade you can receive is a 100%.
 Sample Readme (delete the above when you're ready to submit, and modify the text below with your links and descriptions)
 ---
 
-Charlie Roberts
-http://a1-charlieroberts.onrender.com
+James Ostermiller
+<!-- http://a1-jamesostermiller.onrender.com -->
 
 This project shows ...
 
