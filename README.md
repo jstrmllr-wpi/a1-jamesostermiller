@@ -1,7 +1,7 @@
 James Ostermiller
 http://a1-jamesostermiller.onrender.com
 
-This is a single-page site with basic information about my CS experience.
+This is a single-page site with basic information about my CS education.
 
 ## Technical Achievements
 - **CSS styling**:
