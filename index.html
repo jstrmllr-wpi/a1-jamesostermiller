@@ -36,21 +36,23 @@
     body{
       height:100lvh;
       padding:10px;
-      overflow:none;
+      overflow:hidden;
       background-color:var(--color4);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
     }
     main{
       padding:20px;
       position:relative;
-      height:100%;
+      width:100%;
       max-width:750px;
-      margin-left:auto;
-      margin-right:auto;
       border:4px dotted var(--color5);
       overflow-y:auto;
       overscroll-behavior:none;
+      flex-grow:1;
     }
-    main > *{
+    h1, .expandables{
       display:block;
       border:2px solid var(--color5);
       width:100%;
@@ -86,6 +88,13 @@
         background-color:var(--color3);
       }
     }
+    .jsbuttons{
+      display:block;
+      width:max-content;
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:20px;
+    }
     button{
       padding:10px;
       width:max-content;
@@ -96,6 +105,7 @@
       font-weight:bold;
       font-size:small;
       background-color:var(--color2);
+      border:2px solid var(--color5);
       &:hover{
         background-color:var(--color3);
         border-color:var(--color2);
@@ -106,8 +116,14 @@
       list-style-type:"\2604 ";
       > li {
         padding-left:10px;
-        margin-bottom:5px;
+        &::marker{
+          font-size:20px;
+        }
       }
+    }
+    footer{
+      padding:10px 10px 0;
+      flex-basis:content;
     }
     /* @media screen and (min-width:800px){
 
@@ -118,7 +134,7 @@
 <body>
   <main>
     <h1>James Ostermiller</h1>
-    <div>
+    <div class="expandables">
       <details>
         <summary>Major</summary>
         Computer Science, class of 2028
@@ -147,10 +163,23 @@
         </ul>
       </details>
     </div>
-    <button type="buttton" onclick="closeDetails()">Close all</button>
+    <div class="jsbuttons">
+      <button type="button" onclick="openDetails()">Open all</button>
+      <button type="button" onclick="closeDetails()">Close all</button>
+    </div>
   </main>
+  <footer>
+    Source:
+    <a href=https://github.com/jstrmllr-wpi/a1-jamesostermiller>github</a>
+  </footer>
 
   <script>
+    function openDetails(){
+      const elems = document.getElementsByTagName('details')
+      for(let i = 0; i < elems.length; i++){
+        elems[i].setAttribute('open', '');
+      }
+    }
     function closeDetails(){
       const elems = document.getElementsByTagName('details')
       for(let i = 0; i < elems.length; i++){
