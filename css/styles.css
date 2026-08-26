@@ -41,7 +41,7 @@ main{
     overscroll-behavior:none;
     flex-grow:1;
 }
-h1, .expandables{
+h1, detail-wrapper{
     display:block;
     border:2px solid var(--color5);
     width:100%;
@@ -65,7 +65,7 @@ details{
     }
     }
     &:last-of-type{
-    border-bottom:0;
+        border-bottom:0;
     }
 }
 summary{
@@ -74,10 +74,10 @@ summary{
     font-weight:bold;
     text-align:center;
     &:hover{
-    background-color:var(--color3);
+        background-color:var(--color3);
     }
 }
-.jsbuttons{
+detail-buttons{
     display:block;
     width:max-content;
     margin-left:auto;
@@ -96,18 +96,18 @@ button{
     background-color:var(--color2);
     border:2px solid var(--color5);
     &:hover{
-    background-color:var(--color3);
-    border-color:var(--color2);
+        background-color:var(--color3);
+        border-color:var(--color2);
     }
 }
 ul{
     padding-left:20px;
     list-style-type:"\2604 ";
     > li {
-    padding-left:10px;
-    &::marker{
-        font-size:20px;
-    }
+        padding-left:10px;
+        &::marker{
+            font-size:20px;
+        }
     }
 }
 footer{
